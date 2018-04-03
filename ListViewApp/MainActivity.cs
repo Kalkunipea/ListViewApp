@@ -2,6 +2,9 @@
 using Android.Widget;
 using Android.OS;
 using System.Collections.Generic;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace ListViewApp
 {
@@ -14,6 +17,9 @@ namespace ListViewApp
         {
             base.OnCreate(savedInstanceState);
 
+            AppCenter.Start("d3036275-71b3-4629-91e0-c1d1314b47a5",
+                   typeof(Analytics), typeof(Crashes));
+            AppCenter.Start("d3036275-71b3-4629-91e0-c1d1314b47a5", typeof(Analytics), typeof(Crashes));
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
             ListView1 = FindViewById<ListView>(Resource.Id.listView1);
